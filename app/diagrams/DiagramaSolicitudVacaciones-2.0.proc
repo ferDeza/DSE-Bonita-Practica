@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/bpm/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
   <process:MainProcess xmi:id="_E9lCID80EfCfz8ZKgoLfaw" name="DiagramaSolicitudVacaciones" version="2.0" bonitaModelVersion="8">
     <elements xmi:type="process:Pool" xmi:id="_E9lCIT80EfCfz8ZKgoLfaw" name="Pool" version="2.0">
       <elements xmi:type="process:Lane" xmi:id="_E9lCIj80EfCfz8ZKgoLfaw" name="Employee lane" actor="_E9lCdj80EfCfz8ZKgoLfaw">
@@ -12,6 +12,17 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_E9lCKD80EfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_E9lCKT80EfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_E9lCKj80EfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_ahlnEj89EfCfz8ZKgoLfaw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_ahlnEz89EfCfz8ZKgoLfaw" name="solicitud" content="solicitud" type="TYPE_VARIABLE" returnType="com.company.model.SolicitudVacaciones">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ahlnFD89EfCfz8ZKgoLfaw" name="solicitud" dataType="_E9lCjz80EfCfz8ZKgoLfaw" className="com.company.model.SolicitudVacaciones"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_ahlnFT89EfCfz8ZKgoLfaw" name="solicitudInput.estaAprobado" content="solicitudInput?.estaAprobado" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_ahlnFj89EfCfz8ZKgoLfaw" name="solicitudInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_ahlnFz89EfCfz8ZKgoLfaw" type="JAVA_METHOD" expression="setEstaAprobado">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_E9lCKz80EfCfz8ZKgoLfaw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_E9lCLD80EfCfz8ZKgoLfaw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_E9lCLT80EfCfz8ZKgoLfaw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -21,9 +32,13 @@
             <condition xmi:type="expression:Expression" xmi:id="_E9lCMT80EfCfz8ZKgoLfaw" name="00:00:05" content="5000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
           </BoundaryIntermediateEvents>
           <formMapping xmi:type="process:FormMapping" xmi:id="_E9lCMj80EfCfz8ZKgoLfaw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_E9lCMz80EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_reWVED87EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_E9lCND80EfCfz8ZKgoLfaw"/>
+          <contract xmi:type="process:Contract" xmi:id="_E9lCND80EfCfz8ZKgoLfaw">
+            <inputs xmi:type="process:ContractInput" xmi:id="_ahlnED89EfCfz8ZKgoLfaw" name="solicitudInput" type="COMPLEX" dataReference="solicitud" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_ahlnET89EfCfz8ZKgoLfaw" name="estaAprobado" type="BOOLEAN" createMode="false"/>
+            </inputs>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_E9lCNT80EfCfz8ZKgoLfaw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_E9lCNj80EfCfz8ZKgoLfaw" name="Notificar aprobacion" outgoing="_E9lCZD80EfCfz8ZKgoLfaw" incoming="_E9lCbT80EfCfz8ZKgoLfaw">
@@ -72,8 +87,15 @@
           <completionCondition xmi:type="expression:Expression" xmi:id="_E9lCXD80EfCfz8ZKgoLfaw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
       </elements>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_iV_CYD87EfCfz8ZKgoLfaw" name="solicitud" dataType="_E9lCjz80EfCfz8ZKgoLfaw" className="com.company.model.SolicitudVacaciones">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_TPMM9T88EfCfz8ZKgoLfaw" name="initSolicitud()" content="import org.bonitasoft.engine.identity.UserNotFoundException&#xD;&#xA;&#xD;&#xA;def solicitudVacacionesVar = new com.company.model.SolicitudVacaciones()&#xD;&#xA;solicitudVacacionesVar.fechaInicio = solicitudInput?.fechaInicio&#xD;&#xA;solicitudVacacionesVar.numeroDias = solicitudInput?.numeroDias&#xD;&#xA;try{&#xD;&#xA;&#x9;def processInitiator = apiAccessor.getIdentityAPI().getUser(apiAccessor.getProcessAPI()&#xD;&#xA;&#x9;&#x9;&#x9;.getProcessInstance(processInstanceId)&#xD;&#xA;&#x9;&#x9;&#x9;.getStartedBy())&#xD;&#xA;&#x9;solicitudVacacionesVar.solicitanteId = processInitiator.id&#xD;&#xA;}catch(UserNotFoundException e){&#xD;&#xA;&#x9;// Handle UserNotFoundException here&#xD;&#xA;&#x9;// Was the process started by the system (e.g.: a start event) ?&#xD;&#xA;&#x9;// Has the user who started the process instance been deleted ?&#xD;&#xA;}&#xD;&#xA;return solicitudVacacionesVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudVacaciones">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_NOGXwD89EfCfz8ZKgoLfaw" name="solicitudInput" type="COMPLEX"/>
+          <referencedElements xmi:type="expression:Expression" xmi:id="_NOGXwT89EfCfz8ZKgoLfaw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+          <referencedElements xmi:type="expression:Expression" xmi:id="_NOGXwj89EfCfz8ZKgoLfaw" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+        </defaultValue>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_E9lCXT80EfCfz8ZKgoLfaw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_E9lCXj80EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_reWVET87EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_E9lCXz80EfCfz8ZKgoLfaw">
         <targetForm xmi:type="expression:Expression" xmi:id="_E9lCYD80EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -96,7 +118,9 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_E9lCbT80EfCfz8ZKgoLfaw" name="Si" target="_E9lCNj80EfCfz8ZKgoLfaw" source="_E9lCUD80EfCfz8ZKgoLfaw">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_E9lCbj80EfCfz8ZKgoLfaw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_E9lCbz80EfCfz8ZKgoLfaw" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_E9lCbz80EfCfz8ZKgoLfaw" name="newScript()" content="solicitud.estaAprobado" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_pORd8D89EfCfz8ZKgoLfaw" name="solicitud" dataType="_E9lCjz80EfCfz8ZKgoLfaw" className="com.company.model.SolicitudVacaciones"/>
+        </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_E9lCcD80EfCfz8ZKgoLfaw" name="No" target="_E9lCPz80EfCfz8ZKgoLfaw" source="_E9lCUD80EfCfz8ZKgoLfaw" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_E9lCcT80EfCfz8ZKgoLfaw"/>
@@ -107,7 +131,48 @@
         <condition xmi:type="expression:Expression" xmi:id="_E9lCdT80EfCfz8ZKgoLfaw" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_E9lCdj80EfCfz8ZKgoLfaw" documentation="This is an example of actor that is mapped to any ACME users" name="Employee actor" initiator="true"/>
-      <contract xmi:type="process:Contract" xmi:id="_E9lCdz80EfCfz8ZKgoLfaw"/>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_pV8eID87EfCfz8ZKgoLfaw" name="Production" version="8" username="walter.bates">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_pV8eJj87EfCfz8ZKgoLfaw">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_pV8eJz87EfCfz8ZKgoLfaw" name="Employee actor">
+            <groups xmi:type="actormapping:Groups" xmi:id="_pV8eKD87EfCfz8ZKgoLfaw"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_pV8eKT87EfCfz8ZKgoLfaw"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_pV8eKj87EfCfz8ZKgoLfaw"/>
+            <users xmi:type="actormapping:Users" xmi:id="_pV8eKz87EfCfz8ZKgoLfaw"/>
+          </actorMapping>
+        </actorMappings>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_pV8eIT87EfCfz8ZKgoLfaw" id="CONNECTOR"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_pV8eIj87EfCfz8ZKgoLfaw" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_pV8eIz87EfCfz8ZKgoLfaw" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_pV8eJD87EfCfz8ZKgoLfaw" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_pV8eJT87EfCfz8ZKgoLfaw" id="GROOVY_SCRIPT"/>
+      </configurations>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_qZvdcD87EfCfz8ZKgoLfaw" name="Qualification" version="8" username="walter.bates">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_qZvddj87EfCfz8ZKgoLfaw">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_qZvddz87EfCfz8ZKgoLfaw" name="Employee actor">
+            <groups xmi:type="actormapping:Groups" xmi:id="_qZvdeD87EfCfz8ZKgoLfaw"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_qZvdeT87EfCfz8ZKgoLfaw"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_qZvdej87EfCfz8ZKgoLfaw"/>
+            <users xmi:type="actormapping:Users" xmi:id="_qZvdez87EfCfz8ZKgoLfaw"/>
+          </actorMapping>
+        </actorMappings>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_qZvdcT87EfCfz8ZKgoLfaw" id="CONNECTOR"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_qZvdcj87EfCfz8ZKgoLfaw" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_qZvdcz87EfCfz8ZKgoLfaw" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_qZvddD87EfCfz8ZKgoLfaw" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_qZvddT87EfCfz8ZKgoLfaw" id="GROOVY_SCRIPT"/>
+      </configurations>
+      <contract xmi:type="process:Contract" xmi:id="_E9lCdz80EfCfz8ZKgoLfaw">
+        <inputs xmi:type="process:ContractInput" xmi:id="_TPMM8D88EfCfz8ZKgoLfaw" name="solicitudInput" type="COMPLEX" dataReference="solicitud">
+          <inputs xmi:type="process:ContractInput" xmi:id="_TPMM8T88EfCfz8ZKgoLfaw" name="fechaInicio" type="LOCALDATE"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_TPMM8j88EfCfz8ZKgoLfaw" name="numeroDias" type="INTEGER"/>
+        </inputs>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_TPMM8z88EfCfz8ZKgoLfaw" expression="solicitudInput?.fechaInicio != null" errorMessage="fechaInicio is mandatory for SolicitudVacaciones" name="mandatory_solicitudInput_fechaInicio">
+          <inputNames>solicitudInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_TPMM9D88EfCfz8ZKgoLfaw" expression="solicitudInput?.numeroDias != null" errorMessage="numeroDias is mandatory for SolicitudVacaciones" name="mandatory_solicitudInput_numeroDias">
+          <inputNames>solicitudInput</inputNames>
+        </constraints>
+      </contract>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_E9lCeD80EfCfz8ZKgoLfaw">
         <name xmi:type="expression:Expression" xmi:id="_E9lCeT80EfCfz8ZKgoLfaw" content="" returnTypeFixed="true"/>
         <value xmi:type="expression:Expression" xmi:id="_E9lCej80EfCfz8ZKgoLfaw" content="" returnTypeFixed="true"/>
@@ -190,14 +255,14 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_E9lpUz80EfCfz8ZKgoLfaw" type="3027" element="_E9lCVD80EfCfz8ZKgoLfaw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_E9lpVD80EfCfz8ZKgoLfaw" type="5017"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E9lpVT80EfCfz8ZKgoLfaw" x="145" y="239" width="143" height="71"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E9lpVT80EfCfz8ZKgoLfaw" x="134" y="282" width="143" height="71"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_E9lpVj80EfCfz8ZKgoLfaw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_E9lpVz80EfCfz8ZKgoLfaw" fontName="Segoe UI"/>
           <styles xmi:type="notation:LineStyle" xmi:id="_E9lpWD80EfCfz8ZKgoLfaw"/>
           <styles xmi:type="notation:FillStyle" xmi:id="_E9lpWT80EfCfz8ZKgoLfaw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E9lpWj80EfCfz8ZKgoLfaw" x="53" y="10" width="826" height="370"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E9lpWj80EfCfz8ZKgoLfaw" x="53" y="10" width="826" height="413"/>
         </children>
       </children>
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_E9lpWz80EfCfz8ZKgoLfaw"/>
