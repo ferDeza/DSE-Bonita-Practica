@@ -32,7 +32,7 @@
             <condition xmi:type="expression:Expression" xmi:id="_E9lCMT80EfCfz8ZKgoLfaw" name="00:00:05" content="5000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
           </BoundaryIntermediateEvents>
           <formMapping xmi:type="process:FormMapping" xmi:id="_E9lCMj80EfCfz8ZKgoLfaw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_reWVED87EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_uXFK0D89EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_E9lCND80EfCfz8ZKgoLfaw">
             <inputs xmi:type="process:ContractInput" xmi:id="_ahlnED89EfCfz8ZKgoLfaw" name="solicitudInput" type="COMPLEX" dataReference="solicitud" createMode="false">
@@ -71,7 +71,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_E9lCTj80EfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_E9lCTz80EfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:XORGateway" xmi:id="_E9lCUD80EfCfz8ZKgoLfaw" name="Gateway1" outgoing="_E9lCbT80EfCfz8ZKgoLfaw _E9lCcD80EfCfz8ZKgoLfaw" incoming="_E9lCaj80EfCfz8ZKgoLfaw">
+        <elements xmi:type="process:XORGateway" xmi:id="_E9lCUD80EfCfz8ZKgoLfaw" name="¿Solcicitud aprobada?" outgoing="_E9lCbT80EfCfz8ZKgoLfaw _E9lCcD80EfCfz8ZKgoLfaw" incoming="_E9lCaj80EfCfz8ZKgoLfaw">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_E9lCUT80EfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_E9lCUj80EfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_E9lCUz80EfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
@@ -95,7 +95,7 @@
         </defaultValue>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_E9lCXT80EfCfz8ZKgoLfaw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_reWVET87EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_uXFK0T89EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_E9lCXz80EfCfz8ZKgoLfaw">
         <targetForm xmi:type="expression:Expression" xmi:id="_E9lCYD80EfCfz8ZKgoLfaw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>

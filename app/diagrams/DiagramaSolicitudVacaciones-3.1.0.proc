@@ -166,7 +166,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_3rS6Hz-yEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_3rS6ID-yEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:XORGateway" xmi:id="_3rS6IT-yEfCfz8ZKgoLfaw" name="Gateway1" outgoing="_3rS6Wz-yEfCfz8ZKgoLfaw _3rS6Xz-yEfCfz8ZKgoLfaw" incoming="_3rS6WD-yEfCfz8ZKgoLfaw">
+        <elements xmi:type="process:XORGateway" xmi:id="_3rS6IT-yEfCfz8ZKgoLfaw" name="¿Solicitud aprobada?" outgoing="_3rS6Wz-yEfCfz8ZKgoLfaw _3rS6Xz-yEfCfz8ZKgoLfaw" incoming="_3rS6WD-yEfCfz8ZKgoLfaw">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_3rS6Ij-yEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_3rS6Iz-yEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_3rS6JD-yEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
