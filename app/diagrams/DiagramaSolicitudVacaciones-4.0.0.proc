@@ -38,7 +38,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_3_RZ1T9NEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_3_RZ1j9NEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:XORGateway" xmi:id="_3_RZ1z9NEfCfz8ZKgoLfaw" name="Gateway1" outgoing="_3_RZ-T9NEfCfz8ZKgoLfaw _3_RZ_T9NEfCfz8ZKgoLfaw" incoming="_3_RZ9j9NEfCfz8ZKgoLfaw">
+        <elements xmi:type="process:XORGateway" xmi:id="_3_RZ1z9NEfCfz8ZKgoLfaw" name="¿Solicitud aprobada?" outgoing="_3_RZ-T9NEfCfz8ZKgoLfaw _3_RZ_T9NEfCfz8ZKgoLfaw" incoming="_3_RZ9j9NEfCfz8ZKgoLfaw">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_3_RZ2D9NEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_3_RZ2T9NEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_3_RZ2j9NEfCfz8ZKgoLfaw" name="" content="" returnTypeFixed="true"/>
@@ -268,7 +268,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_3_RaXj9NEfCfz8ZKgoLfaw" type="3027" element="_3_RZ2z9NEfCfz8ZKgoLfaw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_3_RaXz9NEfCfz8ZKgoLfaw" type="5017"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3_RaYD9NEfCfz8ZKgoLfaw" x="206" y="277" width="143" height="71"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3_RaYD9NEfCfz8ZKgoLfaw" x="278" y="133" width="143" height="71"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_9B0GoT9NEfCfz8ZKgoLfaw"/>
